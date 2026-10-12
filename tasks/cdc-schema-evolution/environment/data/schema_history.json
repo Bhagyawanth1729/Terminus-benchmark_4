@@ -1,0 +1,56 @@
+{
+  "table": "users",
+  "migrations": [
+    {
+      "version": 1,
+      "description": "Initial schema",
+      "ddl": "CREATE TABLE users (id BIGINT PRIMARY KEY, user_id BIGINT NOT NULL, email VARCHAR(50) NOT NULL, status VARCHAR(20) NOT NULL DEFAULT 'active', created_at TIMESTAMP NOT NULL);",
+      "effective_from_event": 1
+    },
+    {
+      "version": 2,
+      "description": "Widen email column from VARCHAR(50) to VARCHAR(200)",
+      "ddl": "ALTER TABLE users ALTER COLUMN email TYPE VARCHAR(200);",
+      "effective_from_event": 2001,
+      "column_changes": [
+        {
+          "column": "email",
+          "old_type": "VARCHAR(50)",
+          "new_type": "VARCHAR(200)",
+          "action": "widen"
+        }
+      ]
+    },
+    {
+      "version": 3,
+      "description": "Drop NOT NULL on user_id, rename user_id to customer_id",
+      "ddl": "ALTER TABLE users ALTER COLUMN user_id DROP NOT NULL; ALTER TABLE users RENAME COLUMN user_id TO customer_id;",
+      "effective_from_event": 3501,
+      "column_changes": [
+        {
+          "column": "user_id",
+          "action": "drop_not_null"
+        },
+        {
+          "column": "user_id",
+          "new_name": "customer_id",
+          "action": "rename"
+        }
+      ]
+    },
+    {
+      "version": 4,
+      "description": "Add metadata JSONB column with default '{}'",
+      "ddl": "ALTER TABLE users ADD COLUMN metadata JSONB NOT NULL DEFAULT '{}'::jsonb;",
+      "effective_from_event": 4501,
+      "column_changes": [
+        {
+          "column": "metadata",
+          "type": "JSONB",
+          "default": "{}",
+          "action": "add"
+        }
+      ]
+    }
+  ]
+}
