@@ -1,0 +1,202 @@
+[
+  {
+    "tran_seq": 1,
+    "tran_date": "2024-11-23",
+    "tran_time": "02:91:84",
+    "tran_type": "D",
+    "acct_num": "ACC4096574420748",
+    "currency": "JPY",
+    "amount": 37449.54,
+    "fee": 182.89,
+    "narrative": "DEBIT PURCHASE 2679 MERCHANT792",
+    "ref_number": null,
+    "_annotations": {
+      "record_number": 1,
+      "layout_used": "DEBIT-DETAILS",
+      "amt_scaling": "COMP-3 PIC S9(7)V99 -> divide by 100",
+      "fee_scaling": "COMP-3 PIC S9(5)V99 -> divide by 100",
+      "narrative_termination": "LOW-VALUE (0x00) terminator at byte offset 53 + length",
+      "redefines_note": "Same bytes at offset 44 interpreted differently based on TRAN-TYPE"
+    }
+  },
+  {
+    "tran_seq": 2,
+    "tran_date": "2024-10-06",
+    "tran_time": "02:27:90",
+    "tran_type": "C",
+    "acct_num": "ACC1335481260546",
+    "currency": "EUR",
+    "amount": 2934519.32,
+    "fee": 0.0,
+    "ref_number": "REF93109135952049580",
+    "narrative": "CREDIT DEPOSIT 1434 SOURCE674",
+    "_annotations": {
+      "record_number": 2,
+      "layout_used": "CREDIT-DETAILS",
+      "amt_scaling": "COMP-3 PIC S9(8)V99 -> divide by 100",
+      "fee_scaling": "N/A (credits have no fee)",
+      "narrative_termination": "LOW-VALUE (0x00) terminator at byte offset 70 + length",
+      "redefines_note": "Same bytes at offset 44 interpreted differently based on TRAN-TYPE"
+    }
+  },
+  {
+    "tran_seq": 3,
+    "tran_date": "2024-04-11",
+    "tran_time": "18:77:00",
+    "tran_type": "C",
+    "acct_num": "ACC6057634106603",
+    "currency": "CAD",
+    "amount": 87234.92,
+    "fee": 0.0,
+    "ref_number": "REF43311485687807161",
+    "narrative": "CREDIT DEPOSIT 7924 SOURCE448",
+    "_annotations": {
+      "record_number": 3,
+      "layout_used": "CREDIT-DETAILS",
+      "amt_scaling": "COMP-3 PIC S9(8)V99 -> divide by 100",
+      "fee_scaling": "N/A (credits have no fee)",
+      "narrative_termination": "LOW-VALUE (0x00) terminator at byte offset 70 + length",
+      "redefines_note": "Same bytes at offset 44 interpreted differently based on TRAN-TYPE"
+    }
+  },
+  {
+    "tran_seq": 4,
+    "tran_date": "2024-05-22",
+    "tran_time": "04:07:58",
+    "tran_type": "D",
+    "acct_num": "ACC9596203406567",
+    "currency": "AUD",
+    "amount": 17149.03,
+    "fee": 121.56,
+    "narrative": "DEBIT PURCHASE 7224 MERCHANT199",
+    "ref_number": null,
+    "_annotations": {
+      "record_number": 4,
+      "layout_used": "DEBIT-DETAILS",
+      "amt_scaling": "COMP-3 PIC S9(7)V99 -> divide by 100",
+      "fee_scaling": "COMP-3 PIC S9(5)V99 -> divide by 100",
+      "narrative_termination": "LOW-VALUE (0x00) terminator at byte offset 53 + length",
+      "redefines_note": "Same bytes at offset 44 interpreted differently based on TRAN-TYPE"
+    }
+  },
+  {
+    "tran_seq": 5,
+    "tran_date": "2024-07-02",
+    "tran_time": "22:21:65",
+    "tran_type": "C",
+    "acct_num": "ACC3978242152227",
+    "currency": "USD",
+    "amount": 9794304.32,
+    "fee": 0.0,
+    "ref_number": "REF19891662374490660",
+    "narrative": "CREDIT DEPOSIT 7201 SOURCE180",
+    "_annotations": {
+      "record_number": 5,
+      "layout_used": "CREDIT-DETAILS",
+      "amt_scaling": "COMP-3 PIC S9(8)V99 -> divide by 100",
+      "fee_scaling": "N/A (credits have no fee)",
+      "narrative_termination": "LOW-VALUE (0x00) terminator at byte offset 70 + length",
+      "redefines_note": "Same bytes at offset 44 interpreted differently based on TRAN-TYPE"
+    }
+  },
+  {
+    "tran_seq": 6,
+    "tran_date": "2024-10-09",
+    "tran_time": "07:68:54",
+    "tran_type": "C",
+    "acct_num": "ACC3164988961980",
+    "currency": "EUR",
+    "amount": 615054.52,
+    "fee": 0.0,
+    "ref_number": "REF28174129289355940",
+    "narrative": "CREDIT DEPOSIT 4814 SOURCE987",
+    "_annotations": {
+      "record_number": 6,
+      "layout_used": "CREDIT-DETAILS",
+      "amt_scaling": "COMP-3 PIC S9(8)V99 -> divide by 100",
+      "fee_scaling": "N/A (credits have no fee)",
+      "narrative_termination": "LOW-VALUE (0x00) terminator at byte offset 70 + length",
+      "redefines_note": "Same bytes at offset 44 interpreted differently based on TRAN-TYPE"
+    }
+  },
+  {
+    "tran_seq": 7,
+    "tran_date": "2024-02-21",
+    "tran_time": "09:96:47",
+    "tran_type": "C",
+    "acct_num": "ACC8157152975878",
+    "currency": "AUD",
+    "amount": 2183116.42,
+    "fee": 0.0,
+    "ref_number": "REF35000331812094094",
+    "narrative": "CREDIT DEPOSIT 5374 SOURCE818",
+    "_annotations": {
+      "record_number": 7,
+      "layout_used": "CREDIT-DETAILS",
+      "amt_scaling": "COMP-3 PIC S9(8)V99 -> divide by 100",
+      "fee_scaling": "N/A (credits have no fee)",
+      "narrative_termination": "LOW-VALUE (0x00) terminator at byte offset 70 + length",
+      "redefines_note": "Same bytes at offset 44 interpreted differently based on TRAN-TYPE"
+    }
+  },
+  {
+    "tran_seq": 8,
+    "tran_date": "2024-12-15",
+    "tran_time": "16:98:78",
+    "tran_type": "D",
+    "acct_num": "ACC8149213974534",
+    "currency": "GBP",
+    "amount": 89614.8,
+    "fee": 955.68,
+    "narrative": "DEBIT PURCHASE 5010 MERCHANT267",
+    "ref_number": null,
+    "_annotations": {
+      "record_number": 8,
+      "layout_used": "DEBIT-DETAILS",
+      "amt_scaling": "COMP-3 PIC S9(7)V99 -> divide by 100",
+      "fee_scaling": "COMP-3 PIC S9(5)V99 -> divide by 100",
+      "narrative_termination": "LOW-VALUE (0x00) terminator at byte offset 53 + length",
+      "redefines_note": "Same bytes at offset 44 interpreted differently based on TRAN-TYPE"
+    }
+  },
+  {
+    "tran_seq": 9,
+    "tran_date": "2024-08-24",
+    "tran_time": "09:94:71",
+    "tran_type": "C",
+    "acct_num": "ACC8748019640745",
+    "currency": "JPY",
+    "amount": 9188747.02,
+    "fee": 0.0,
+    "ref_number": "REF29478617103847124",
+    "narrative": "CREDIT DEPOSIT 1525 SOURCE924",
+    "_annotations": {
+      "record_number": 9,
+      "layout_used": "CREDIT-DETAILS",
+      "amt_scaling": "COMP-3 PIC S9(8)V99 -> divide by 100",
+      "fee_scaling": "N/A (credits have no fee)",
+      "narrative_termination": "LOW-VALUE (0x00) terminator at byte offset 70 + length",
+      "redefines_note": "Same bytes at offset 44 interpreted differently based on TRAN-TYPE"
+    }
+  },
+  {
+    "tran_seq": 10,
+    "tran_date": "2024-06-10",
+    "tran_time": "10:51:62",
+    "tran_type": "C",
+    "acct_num": "ACC3375420405177",
+    "currency": "AUD",
+    "amount": 2853835.22,
+    "fee": 0.0,
+    "ref_number": "REF74549423520032674",
+    "narrative": "CREDIT DEPOSIT 8517 SOURCE246",
+    "_annotations": {
+      "record_number": 10,
+      "layout_used": "CREDIT-DETAILS",
+      "amt_scaling": "COMP-3 PIC S9(8)V99 -> divide by 100",
+      "fee_scaling": "N/A (credits have no fee)",
+      "narrative_termination": "LOW-VALUE (0x00) terminator at byte offset 70 + length",
+      "redefines_note": "Same bytes at offset 44 interpreted differently based on TRAN-TYPE"
+    }
+  }
+]
