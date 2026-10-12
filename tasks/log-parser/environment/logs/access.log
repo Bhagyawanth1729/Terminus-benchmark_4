@@ -1,0 +1,20 @@
+[INFO] 2024-01-15T12:00:00Z - HTTP request - method=GET, path=/, status=200, latency_ms=5, request_id=acc_00001, client_ip=10.0.0.1, user_agent=Mozilla/5.0
+[INFO] 2024-01-15T12:00:00Z - HTTP request - method=GET, path=/favicon.ico, status=200, latency_ms=2, request_id=acc_00002, client_ip=10.0.0.1, user_agent=Mozilla/5.0
+[INFO] 2024-01-15T12:00:01Z - HTTP request - method=GET, path=/api/health, status=200, latency_ms=3, request_id=acc_00003, client_ip=10.0.0.2, user_agent=kube-probe/1.28
+[INFO] 2024-01-15T12:00:01Z - HTTP request - method=POST, path=/api/auth/login, status=200, latency_ms=45, request_id=acc_00004, client_ip=10.0.0.3, user_agent=MyApp/1.0
+[INFO] 2024-01-15T12:00:02Z - HTTP request - method=GET, path=/api/users/12345, status=200, latency_ms=12, request_id=acc_00005, client_ip=10.0.0.3, user_agent=MyApp/1.0
+[INFO] 2024-01-15T12:00:02Z - HTTP request - method=GET, path=/api/users/12345/profile, status=200, latency_ms=8, request_id=acc_00006, client_ip=10.0.0.3, user_agent=MyApp/1.0
+[INFO] 2024-01-15T12:00:03Z - HTTP request - method=GET, path=/api/orders, status=200, latency_ms=23, request_id=acc_00007, client_ip=10.0.0.3, user_agent=MyApp/1.0
+[INFO] 2024-01-15T12:00:03Z - HTTP request - method=GET, path=/api/products?category=electronics, status=200, latency_ms=34, request_id=acc_00008, client_ip=10.0.0.3, user_agent=MyApp/1.0
+[INFO] 2024-01-15T12:00:04Z - HTTP request - method=POST, path=/api/cart, status=201, latency_ms=15, request_id=acc_00009, client_ip=10.0.0.3, user_agent=MyApp/1.0, body={"product_id": 789, "quantity": 2}
+[INFO] 2024-01-15T12:00:04Z - HTTP request - method=GET, path=/api/cart, status=200, latency_ms=6, request_id=acc_00010, client_ip=10.0.0.3, user_agent=MyApp/1.0
+[INFO] 2024-01-15T12:00:05Z - HTTP request - method=POST, path=/api/checkout, status=200, latency_ms=156, request_id=acc_00011, client_ip=10.0.0.3, user_agent=MyApp/1.0, body={"payment_method": "card_123", "shipping_address_id": 456}
+[INFO] 2024-01-15T12:00:05Z - HTTP request - method=GET, path=/api/orders/ord_789, status=200, latency_ms=9, request_id=acc_00012, client_ip=10.0.0.3, user_agent=MyApp/1.0
+[INFO] 2024-01-15T12:00:06Z - HTTP request - method=GET, path=/api/health, status=200, latency_ms=2, request_id=acc_00013, client_ip=10.0.0.2, user_agent=kube-probe/1.28
+[INFO] 2024-01-15T12:00:06Z - HTTP request - method=GET, path=/api/users/12346, status=200, latency_ms=11, request_id=acc_00014, client_ip=10.0.0.4, user_agent=MyApp/1.0
+[INFO] 2024-01-15T12:00:07Z - HTTP request - method=POST, path=/api/auth/login, status=401, latency_ms=23, request_id=acc_00015, client_ip=10.0.0.5, user_agent=Bot/1.0, error=InvalidCredentials
+[INFO] 2024-01-15T12:00:07Z - HTTP request - method=GET, path=/api/health, status=200, latency_ms=3, request_id=acc_00016, client_ip=10.0.0.2, user_agent=kube-probe/1.28
+[INFO] 2024-01-15T12:00:08Z - HTTP request - method=GET, path=/api/products/789, status=200, latency_ms=7, request_id=acc_00017, client_ip=10.0.0.3, user_agent=MyApp/1.0
+[INFO] 2024-01-15T12:00:08Z - HTTP request - method=GET, path=/api/reviews?product_id=789, status=200, latency_ms=18, request_id=acc_00018, client_ip=10.0.0.3, user_agent=MyApp/1.0
+[INFO] 2024-01-15T12:00:09Z - HTTP request - method=POST, path=/api/reviews, status=201, latency_ms=34, request_id=acc_00019, client_ip=10.0.0.3, user_agent=MyApp/1.0, body={"product_id": 789, "rating": 5, "text": "Great product!"}
+[INFO] 2024-01-15T12:00:09Z - HTTP request - method=GET, path=/api/health, status=200, latency_ms=2, request_id=acc_00020, client_ip=10.0.0.2, user_agent=kube-probe/1.28

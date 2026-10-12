@@ -1,0 +1,10 @@
+[INFO] 2024-01-15T10:30:45Z - User login successful - user_id=12345, ip=192.168.1.1, session_id=abc123, metadata={"device": "mobile", "os": "iOS 17.2", "app_version": "3.4.1"}
+[ERROR] 2024-01-15T10:31:22Z - Database connection failed - error_code=DB_CONN_ERROR, retry_count=3, host=db-primary, error_details={"message": "connection refused", "code": "ECONNREFUSED", "stack": ["pool.getConnection", "createConnection", "connect"]}
+[WARN] 2024-01-15T10:32:10Z - High memory usage detected - memory_percent=87.5, threshold=80.0, process_info={"pid": 1234, "rss_mb": 2048, "heap_mb": 1536}
+[INFO] 2024-01-15T10:33:01Z - Request processed - request_id=req_001, duration_ms=145, status=200, tags=["api", "user", "read"], metadata={"endpoint": "/api/users", "method": "GET"}
+[DEBUG] 2024-01-15T10:33:45Z - Cache miss - key=user_profile_12345, cache_type=redis, fallback=database, latency_ms=12
+[INFO] 2024-01-15T10:34:20Z - User logout - user_id=12345, session_duration=215, events=[{"type": "page_view", "ts": "2024-01-15T10:30:50Z"}, {"type": "click", "ts": "2024-01-15T10:31:10Z"}, {"type": "purchase", "ts": "2024-01-15T10:33:55Z", "amount": 49.99}]
+[ERROR] 2024-01-15T10:35:10Z - Payment processing failed - error_code=PAYMENT_DECLINED, amount=99.99, currency=USD, payment_info={"provider": "stripe", "card_last4": "4242", "decline_code": "insufficient_funds"}
+[WARN] 2024-01-15T10:36:00Z - Slow query detected - query_id=q_456, duration_s=5.2, threshold_s=2.0, query_plan={"type": "Seq Scan", "table": "orders", "rows": 1000000}
+[INFO] 2024-01-15T10:37:15Z - Backup completed - backup_id=bak_789, size_mb=1024, duration_s=45, files=[{"path": "/data/users.db", "size_mb": 512}, {"path": "/data/orders.db", "size_mb": 512}]
+[CRITICAL] 2024-01-15T10:38:00Z - Disk space critical - disk=/dev/sda1, free_percent=3.2, threshold_percent=5.0, mounts=[{"device": "/dev/sda1", "mount": "/", "free_gb": 2.1, "total_gb": 100}]

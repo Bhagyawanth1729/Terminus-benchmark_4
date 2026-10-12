@@ -1,0 +1,10 @@
+[INFO] 2024-01-15T10:30:45.123Z - Event with milliseconds - event_id=evt_001, value=100
+[INFO] 2024-01-15T10:30:45.123456Z - Event with microseconds - event_id=evt_002, value=200
+[INFO] 2024-01-15T10:30:45+00:00 - Event with explicit UTC offset - event_id=evt_003, value=300
+[INFO] 2024-01-15T10:30:45-05:00 - Event with EST offset - event_id=evt_004, value=400
+[INFO] 2024-01-15T10:30:45+09:00 - Event with JST offset - event_id=evt_005, value=500
+[INFO] 2024-01-15T10:30:45.500+01:00 - Event with ms and CET offset - event_id=evt_006, value=600
+[ERROR] 2024-01-15 10:30:45 - Event with space separator - event_id=evt_007, value=700
+[WARN] 2024-01-15 10:30:45.123 - Event with space and ms - event_id=evt_008, value=800
+[DEBUG] 2024/01/15 10:30:45 - Event with slash date - event_id=evt_009, value=900
+[CRITICAL] 15/01/2024 10:30:45 - Event with DD/MM/YYYY - event_id=evt_010, value=1000

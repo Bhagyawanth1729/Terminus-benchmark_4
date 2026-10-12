@@ -1,0 +1,9 @@
+[INFO] 2024-01-15T11:00:00Z - Service started - version=1.2.3, port=8080, config={"workers": 4, "timeout": 30, "max_requests": 1000}
+[ERROR] 2024-01-15T11:00:05Z - Configuration error - missing_key=database.url, config_path=/etc/app/config.yaml
+[WARN] 2024-01-15T11:00:10Z - Deprecated API usage - endpoint=/api/v1/users, replacement=/api/v2/users, client_versions=["1.0", "1.1", "1.2"]
+[INFO] 2024-01-15T11:00:15Z - Health check passed - checks={"database": "ok", "redis": "ok", "queue": "ok"}
+[DEBUG] 2024-01-15T11:00:20Z - Debug trace - trace_id=abc-def-ghi, span_count=12, spans=[{"name": "http.request", "duration_ms": 45}, {"name": "db.query", "duration_ms": 23}, {"name": "cache.get", "duration_ms": 2}]
+[INFO] 2024-01-15T11:01:00Z - Batch job started - job_id=batch_001, records=10000, config={"batch_size": 100, "parallelism": 4}
+[ERROR] 2024-01-15T11:01:30Z - Batch job failed - job_id=batch_001, error=OutOfMemoryError, heap_mb=2048, stack_trace="java.lang.OutOfMemoryError: Java heap space\n\tat com.app.BatchProcessor.process(BatchProcessor.java:142)\n\tat com.app.BatchProcessor.run(BatchProcessor.java:89)\n\tat java.base/java.lang.Thread.run(Thread.java:833)"
+[INFO] 2024-01-15T11:02:00Z - Batch job retried - job_id=batch_001, attempt=2, records=10000, config={"batch_size": 50, "parallelism": 2, "memory_mb": 4096}
+[INFO] 2024-01-15T11:03:45Z - Batch job completed - job_id=batch_001, processed=10000, failed=0, duration_s=165, stats={"throughput": 60.6, "avg_latency_ms": 15}
