@@ -1,0 +1,155 @@
+{
+  "format_version": "1.0",
+  "terraform_version": "1.5.7",
+  "plan": {
+    "resource_changes": [
+      {
+        "address": "module.vpc.aws_security_group.ecs",
+        "mode": "managed",
+        "type": "aws_security_group",
+        "name": "ecs",
+        "provider_name": "registry.terraform.io/hashicorp/aws",
+        "change": {
+          "actions": ["update"],
+          "before": {
+            "id": "sg-0b2c3d4e5f6789012",
+            "name": "app-ecs-sg",
+            "description": "Security group for ECS tasks",
+            "vpc_id": "vpc-0a1b2c3d4e5f67890",
+            "ingress": [
+              { "from_port": 8080, "to_port": 8080, "protocol": "tcp", "security_groups": ["sg-0c3d4e5f678901234"] }
+            ],
+            "egress": [{ "from_port": 0, "to_port": 0, "protocol": "-1", "cidr_blocks": ["0.0.0.0/0"] }],
+            "tags": { "Environment": "production", "Project": "terraform-drift-task", "ManagedBy": "terraform", "Name": "app-ecs-sg" }
+          },
+          "after": {
+            "id": "sg-0b2c3d4e5f6789012",
+            "name": "app-ecs-sg",
+            "description": "Security group for ECS tasks",
+            "vpc_id": "vpc-0a1b2c3d4e5f67890",
+            "ingress": [
+              { "from_port": 8080, "to_port": 8080, "protocol": "tcp", "security_groups": ["sg-0c3d4e5f678901234"] },
+              { "from_port": 22, "to_port": 22, "protocol": "tcp", "cidr_blocks": ["0.0.0.0/0"], "description": "Emergency SSH access - added manually during incident" }
+            ],
+            "egress": [{ "from_port": 0, "to_port": 0, "protocol": "-1", "cidr_blocks": ["0.0.0.0/0"] }],
+            "tags": { "Environment": "production", "Project": "terraform-drift-task", "ManagedBy": "terraform", "Name": "app-ecs-sg" }
+          },
+          "after_unknown": {}
+        }
+      },
+      {
+        "address": "module.rds.aws_db_parameter_group.main",
+        "mode": "managed",
+        "type": "aws_db_parameter_group",
+        "name": "main",
+        "provider_name": "registry.terraform.io/hashicorp/aws",
+        "change": {
+          "actions": ["update"],
+          "before": {
+            "id": "appdb-params",
+            "name": "appdb-params",
+            "family": "postgres15",
+            "parameter": [
+              { "name": "shared_preload_libraries", "value": "pg_stat_statements" },
+              { "name": "max_connections", "value": "200" },
+              { "name": "work_mem", "value": "16MB" }
+            ]
+          },
+          "after": {
+            "id": "appdb-params",
+            "name": "appdb-params",
+            "family": "postgres15",
+            "parameter": [
+              { "name": "shared_preload_libraries", "value": "pg_stat_statements" },
+              { "name": "max_connections", "value": "200" },
+              { "name": "work_mem", "value": "64MB" }
+            ]
+          },
+          "after_unknown": {}
+        }
+      },
+      {
+        "address": "module.s3.aws_s3_bucket_versioning.main",
+        "mode": "managed",
+        "type": "aws_s3_bucket_versioning",
+        "name": "main",
+        "provider_name": "registry.terraform.io/hashicorp/aws",
+        "change": {
+          "actions": ["update"],
+          "before": {
+            "bucket": "terraform-drift-app-assets",
+            "versioning_configuration": [{ "status": "Suspended" }]
+          },
+          "after": {
+            "bucket": "terraform-drift-app-assets",
+            "versioning_configuration": [{ "status": "Enabled", "mfa_delete": "Disabled" }]
+          },
+          "after_unknown": {}
+        }
+      },
+      {
+        "address": "module.ecs.aws_lb_listener.app",
+        "mode": "managed",
+        "type": "aws_lb_listener",
+        "name": "app",
+        "provider_name": "registry.terraform.io/hashicorp/aws",
+        "change": {
+          "actions": ["create"],
+          "before": null,
+          "after": {
+            "load_balancer_arn": "arn:aws:elasticloadbalancing:us-east-1:123456789012:loadbalancer/app/app-alb/abc123def456",
+            "port": 8080,
+            "protocol": "HTTP",
+            "default_action": [{ "type": "forward", "target_group_arn": "arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/app-tg-internal/def456ghi789" }],
+            "certificate_arn": null
+          },
+          "after_unknown": {}
+        }
+      },
+      {
+        "address": "module.vpc.aws_security_group.database",
+        "mode": "managed",
+        "type": "aws_security_group",
+        "name": "database",
+        "provider_name": "registry.terraform.io/hashicorp/aws",
+        "change": {
+          "actions": ["update"],
+          "before": {
+            "id": "sg-0a1b2c3d4e5f67890",
+            "name": "app-db-sg",
+            "description": "Security group for RDS database",
+            "vpc_id": "vpc-0a1b2c3d4e5f67890",
+            "ingress": [{ "from_port": 5432, "to_port": 5432, "protocol": "tcp", "security_groups": ["sg-0b2c3d4e5f6789012"] }],
+            "egress": [{ "from_port": 0, "to_port": 0, "protocol": "-1", "cidr_blocks": ["0.0.0.0/0"] }],
+            "tags": { "Environment": "production", "Project": "terraform-drift-task", "ManagedBy": "terraform", "Name": "app-db-sg" }
+          },
+          "after": {
+            "id": "sg-0a1b2c3d4e5f67890",
+            "name": "app-db-sg",
+            "description": "Security group for RDS database",
+            "vpc_id": "vpc-0a1b2c3d4e5f67890",
+            "ingress": [
+              { "from_port": 5432, "to_port": 5432, "protocol": "tcp", "security_groups": ["sg-0b2c3d4e5f6789012"] },
+              { "from_port": 5432, "to_port": 5432, "protocol": "tcp", "cidr_blocks": ["10.0.0.0/8"], "description": "Allow internal access from corporate VPN" }
+            ],
+            "egress": [{ "from_port": 0, "to_port": 0, "protocol": "-1", "cidr_blocks": ["0.0.0.0/0"] }],
+            "tags": { "Environment": "production", "Project": "terraform-drift-task", "ManagedBy": "terraform", "Name": "app-db-sg" }
+          },
+          "after_unknown": {}
+        }
+      }
+    ],
+    "output_changes": {}
+  },
+  "configuration": {
+    "root_module": {
+      "resources": [
+        { "address": "module.vpc.aws_security_group.ecs", "mode": "managed", "type": "aws_security_group", "name": "ecs" },
+        { "address": "module.rds.aws_db_parameter_group.main", "mode": "managed", "type": "aws_db_parameter_group", "name": "main" },
+        { "address": "module.s3.aws_s3_bucket_versioning.main", "mode": "managed", "type": "aws_s3_bucket_versioning", "name": "main" },
+        { "address": "module.ecs.aws_lb_listener.app", "mode": "managed", "type": "aws_lb_listener", "name": "app" },
+        { "address": "module.vpc.aws_security_group.database", "mode": "managed", "type": "aws_security_group", "name": "database" }
+      ]
+    }
+  }
+}
