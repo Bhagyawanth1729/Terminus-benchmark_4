@@ -1,0 +1,17 @@
+{
+  "query_budgets_ms": {
+    "1": 50,
+    "2": 100,
+    "3": 200,
+    "4": 80,
+    "5": 150,
+    "6": 60,
+    "7": 300,
+    "8": 100,
+    "9": 250,
+    "10": 120
+  },
+  "index_size_cap_pct": 20,
+  "min_table_rows_for_seq_scan_check": 10000,
+  "max_seq_scan_ratio": 0.5
+}
