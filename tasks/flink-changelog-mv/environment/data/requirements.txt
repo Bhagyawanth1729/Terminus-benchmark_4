@@ -1,0 +1,6 @@
+kafka-python==2.0.2
+avro==1.11.3
+fastavro==1.8.4
+confluent-kafka==2.3.0
+psycopg2-binary==2.9.9
+faker==24.5.0
